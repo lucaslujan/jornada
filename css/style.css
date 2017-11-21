@@ -1,0 +1,13 @@
+
+#conMain {
+    background-color: gray !important;
+    width: 100%;
+    height: auto;
+}
+#menu{
+    background-color: orange !important;
+    height: 80px;
+}
+#links{
+    color: white !important;
+}
