@@ -7,145 +7,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900" rel="stylesheet">
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: grid;
-
-            grid-template-areas:
-                    "header header header"
-                    "nav content side"
-                    "footer footer footer";
-            grid-template-columns: 0.2fr 1fr 1fr;
-            grid-template-rows: auto 1fr auto;
-            grid-gap: 10px;
-            height: 100vh;
-        }
-        header {
-            grid-area: header;
-            height: 80px;
-            background-color: #EF7521;}
-
-        nav {
-            grid-area: nav;
-        }
-
-        main {
-            grid-area: content;
-            font-family: 'Merriweather', serif;
-        }
-        main h1{
-            font-size: 65px;
-            line-height: 62px;
-        }
-        main h2{
-            font-size: 38px;
-            line-height: 28px;
-        }
-        main h3{
-            font-size: 20px;
-            line-height: 12px;
-        }
-        aside {
-            grid-area: side;
-            margin-right: 0.5rem;
-        }
-        aside p{
-            font-family: 'Merriweather', serif;
-
-        }
-
-        footer {
-            grid-area: footer;
-            background-color: cadetblue;
-        }
-        @media (max-width: 768px) {
-            .container {
-                grid-template-areas:
-                        "header"
-                        "nav"
-                        "content"
-                        "side"
-                        "footer";
-
-                grid-template-columns: 1fr;
-                grid-template-rows:
-                        auto /* Header */
-                        minmax(75px, auto) /* Nav */
-                        1fr /* Content */
-                        minmax(75px, auto) /* Sidebar */
-                        auto; /* Footer */
-            }
-
-            nav, aside {
-                margin: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <div class="container">
     <header>
-        HEADER
     </header>
 
     <nav>
      <ul>
-         <li><a href="">Inicio</a></li>
-         <li><a href="">Programa</a></li>
-         <li><a href="">Expositores</a></li>
-         <li><a href="">Organizadores y auspiciantes</a></li>
+         <li><a href="index.html">Inicio</a></li>
+         <li><a href="programa.html">Programa</a></li>
+         <li><a href="expositores.html">Expositores</a></li>
+         <li><a href="organizadores.html">Organizadores y auspiciantes</a></li>
      </ul>
     </nav>
 
     <main>
-        <h1>La negociación colectiva como <br>
-            oportunidad.</h1>
+        <p>SINDICATOS Y EMPRESAS EN SALTA ANTE LAS NUEVAS MEDIDAS LABORALES.</p>
+        <h1>La negociación colectiva como oportunidad.</h1>
         <h2>Jornada de intercambios.</h2>
         <h3>Miércoles 13 de diciembre de 2017</h3>
+
     </main>
-
     <aside>
-       <p> I. CONTENIDO Y PROPÓSITO DE LA JORNADA: </p>
-        <p>1.- La economía argentina -aparente y esperanzadamente- está ingresando en una
-        senda de crecimiento. En este contexto, el Gobierno de la Nación, con el apoyo de
-        sectores sindicales y empresariales, está llevando adelante cambios orientados a
-        reformar el marco jurídico del contrato de trabajo y a modernizar las relaciones
-        colectivas de trabajo. </p>
-        <p>Varias de estas transformaciones se han puesto en marcha sin introducir reformas
-        legislativas y aprovechando las oportunidades que brinda la negociación colectiva.
-        Otras, de señalada importancia, han sido anunciadas por el Presidente de la Nación en
-        su discurso del pasado 30 de octubre.
-        Los sectores de hidrocarburos, automotor, textil y calzado encabezan este proceso de
-        modernización de los tradicionales Convenios Colectivos de Trabajo.</p>
-        <p>2.- A su vez, la Agenda de Desarrollo para Salta, que impulsa el Ministerio de
-        Producción de la Nación, contempla el crecimiento de la producción local en sectores
-        como minería, frigoríficos, biocombustibles, agroindustrias y servicios.
-        En algunos casos, este crecimiento estará a cargo de nuevas empresas. En otros,
-        resultará de nuevas inversiones en empresas ya establecidas.</p>
-        <p>3.- Sin duda en Salta, existen las condiciones (nunca aprovechadas) para encarar una
-        reforma laboral doméstica, a la medida de los requerimientos y problemáticas locales.
-        Una de las herramientas del proyectado crecimiento con empleo registrado es la
-        negociación colectiva: ¿Aprovecharemos en Salta los instrumentos y las competencias
-        profesionales con las que contamos para recorrer ese camino?
-        En cualquier caso: ¿Cómo deben preparase las empresas y los sindicatos salteños para
-        esta nueva etapa?</p>
-        <p>II. ¿A QUIEN NOS DIRIGIMOS?</p>
-        <p>El Programa de la Jornada está pensado para completar la visión estratégica de los
-        actores sociales y de los profesionales, y contribuir con la tarea cotidiana de directivos
-        de relaciones laborales y de recursos humanos, de dirigentes empresariales y
-        sindicales, de abogados contadores, licenciados y consultores laboralistas, así como de
-        legisladores y funcionarios públicos.</p>
-        <p>Nuestro propósito es realizar, a lo largo del próximo año, un par de sucesivos talleres
-        destinados a profundizar en la problemática abordada en esta Jornada y a analizar los
-        casos disponibles de acuerdos de modernización laboral.</p>
-    </aside>
+        <p>ORGANIZADORES:</p>
+        <img src="img/logo_grupo.png" alt="">
 
+    </aside>
+    <article>
+        <hr>
+        <p><b>I. CONTENIDO Y PROPÓSITO DE LA JORNADA: </b></p>
+        <p>1.- La economía argentina -aparente y esperanzadamente- está ingresando en una
+            senda de crecimiento. En este contexto, el Gobierno de la Nación, con el apoyo de
+            sectores sindicales y empresariales, está llevando adelante cambios orientados a
+            reformar el marco jurídico del contrato de trabajo y a modernizar las relaciones
+            colectivas de trabajo.
+            Varias de estas transformaciones se han puesto en marcha sin introducir reformas
+            legislativas y aprovechando las oportunidades que brinda la negociación colectiva.
+            Otras, de señalada importancia, han sido anunciadas por el Presidente de la Nación en
+            su discurso del pasado 30 de octubre.
+            Los sectores de hidrocarburos, automotor, textil y calzado encabezan este proceso de
+            modernización de los tradicionales Convenios Colectivos de Trabajo.</p>
+        <p>2.- A su vez, la Agenda de Desarrollo para Salta, que impulsa el Ministerio de
+            Producción de la Nación, contempla el crecimiento de la producción local en sectores
+            como minería, frigoríficos, biocombustibles, agroindustrias y servicios.
+            En algunos casos, este crecimiento estará a cargo de nuevas empresas. En otros,
+            resultará de nuevas inversiones en empresas ya establecidas.</p>
+        <p>3.- Sin duda en Salta, existen las condiciones (nunca aprovechadas) para encarar una
+            reforma laboral doméstica, a la medida de los requerimientos y problemáticas locales.
+            Una de las herramientas del proyectado crecimiento con empleo registrado es la
+            negociación colectiva: ¿Aprovecharemos en Salta los instrumentos y las competencias
+            profesionales con las que contamos para recorrer ese camino?
+            En cualquier caso: ¿Cómo deben preparase las empresas y los sindicatos salteños para
+            esta nueva etapa?</p>
+        <hr>
+        <p><b>II. ¿A QUIEN NOS DIRIGIMOS?</b></p>
+        <p>El Programa de la Jornada está pensado para completar la visión estratégica de los
+            actores sociales y de los profesionales, y contribuir con la tarea cotidiana de directivos
+            de relaciones laborales y de recursos humanos, de dirigentes empresariales y
+            sindicales, de abogados contadores, licenciados y consultores laboralistas, así como de
+            legisladores y funcionarios públicos.</p>
+        <p>Nuestro propósito es realizar, a lo largo del próximo año, un par de sucesivos talleres
+            destinados a profundizar en la problemática abordada en esta Jornada y a analizar los
+            casos disponibles de acuerdos de modernización laboral.</p>
+    </article>
     <footer>
-     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, commodi corporis et laborum odit quidem recusandae rem voluptatem? Architecto delectus dolore esse et fuga laborum natus odio sit totam veniam?
+    <p>Jornada de Intercambios: “Sindicatos y empresas en Salta ante las nuevas medidas laborales. La negociación colectiva como oportunidad”.
+        <br>
+        Miércoles 13 de diciembre de 2017 por la mañana. Exponen: Walter Neil BUHLER, José Armando CARO FIGUEROA y Oscar FARAH.
+        <br>
+        Modera: Martha UGOLINI. Más información: Teléfonos 4212619 – 155 20 30 50. Mail: info@estudiocarofigueroa.com.</p>
     </footer>
 </div>
 </body>
