@@ -170,28 +170,6 @@ h3 {
     margin-left: 70px;
 }
 
-@media all and (max-width: 641px) {
-    .date {
-        width: 100%;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 10px;
-    }
-
-    .events {
-        border: none;
-        width: 100%;
-        margin-top: 0;
-    }
-
-    .events-detail {
-        padding: 0;
-    }
-
-    li.date p {
-        margin: 0;
-    }
-}
-
 footer {
     grid-area: footer;
     background-color: darkgray;
@@ -222,7 +200,52 @@ footer p{
                 auto; /* Footer */
     }
 
-    nav, aside {
+    nav, aside, article {
+        margin: 0;
+    }
+    article{
+        padding: 20px;
+    }
+    article p {
+        text-align: left;
+        margin: 0;
+        font-size: 14px;
+        padding: 20px;
+    }
+    main{
+        margin: 0 auto;
+        background-color: orange;
+
+    }
+    main p{
+        font-size: 14px;
+    }
+    main h1{
+        font-size: 15px ;
+    }
+    nav{
+        background-color: #fae48b;
+    }
+}
+
+@media all and (max-width: 641px) {
+    .date {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    .events {
+        border: none;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .events-detail {
+        padding: 0;
+    }
+
+    li.date p {
         margin: 0;
     }
 }
