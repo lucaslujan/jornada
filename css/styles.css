@@ -26,6 +26,7 @@ header {
 
 nav {
     grid-area: nav;
+    display: flex;
     font-family: 'Merriweather', serif;
 }
 nav ul{
@@ -51,6 +52,9 @@ article{
     padding: 0 200px;
     height: auto;
 }
+article p{
+    font-size: 16px;
+}
 article p:hover{
     background-color: #414244;
     color: white;
@@ -63,6 +67,7 @@ main h1{
     font-size: 70px;
     line-height: 70px;
 }
+
 main h2{
     font-size: 38px;
     line-height: 28px;
@@ -73,14 +78,18 @@ main h3{
 }
 aside {
     grid-area: side;
+    background-color: #cccccc;
+    margin-right: 50px;
+
 }
 aside p{
     font-family: 'Merriweather', serif;
     text-align: center;
 }
 aside img{
-    margin-top: 20px;
-    width: 250px;
+    margin: 0 auto;
+    width: 200px;
+    padding: 10px;
     height: auto;
 }
 
@@ -184,47 +193,56 @@ footer p{
 @media (max-width: 768px) {
     .container {
         grid-template-areas:
-                "header"
                 "nav"
                 "content"
-                "side"
                 "article"
                 "footer";
 
         grid-template-columns: 1fr;
         grid-template-rows:
-                auto /* Header */
-                minmax(75px, auto) /* Nav */
-                1fr /* Content */
-                minmax(75px, auto) /* Sidebar */
-                auto; /* Footer */
+                auto /* Nav */
+                1fr /* Header */
+                auto /* Content */
+                1fr; /* Footer */
     }
-
-    nav, aside, article {
-        margin: 0;
+    aside{
+        display: none;
     }
-    article{
-        padding: 20px;
-    }
-    article p {
-        text-align: left;
-        margin: 0;
-        font-size: 14px;
-        padding: 20px;
-    }
-    main{
+    nav, article, content, footer{
         margin: 0 auto;
-        background-color: orange;
-
-    }
-    main p{
-        font-size: 14px;
-    }
-    main h1{
-        font-size: 15px ;
+        padding: 0;
     }
     nav{
-        background-color: #fae48b;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        background-color: cadetblue;
+
+    }
+    nav ul{
+        padding: 0;
+
+    }
+    main {
+        padding: 10px;
+    }
+    main p{
+        font-size: 10px;
+    }
+    main h1{
+        font-size: 40px;
+        line-height: 28px;
+    }
+    main h2{
+        font-size: 20px;
+        line-height: 18px;
+
+    }
+    article{
+        padding: 10px;
+    }
+    article p{
+        font-size: 12px;
     }
 }
 
