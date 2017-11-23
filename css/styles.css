@@ -15,15 +15,37 @@ h1, h2, h3, h4, h5, p {
             "article article article"
             "footer footer footer";
     grid-template-columns: 15% 65% 20%;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-gap: 10px;
     height: 100vh;
 }
 header {
     grid-area: header;
-    height: 30px;
-    background-color: gray;}
+    padding: 20px;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #ececec;}
 
+header #logo1 img{
+    width: 230px;
+    height: auto;
+}
+header #logo2 img{
+    width: 100px;
+    margin: 15px;
+    height: auto;
+}
+header #logo3 img{
+    width: 100px;
+    margin: 15px;
+    height: auto;
+}
+header p{
+    font-size: 11px;
+    align-self: flex-end;
+}
 nav {
     grid-area: nav;
     display: flex;
@@ -78,7 +100,6 @@ main h3{
 }
 aside {
     grid-area: side;
-    background-color: #cccccc;
     margin-right: 50px;
 
 }
@@ -190,80 +211,114 @@ footer p{
     text-align: center;
     color: white;
 }
-@media (max-width: 768px) {
-    .container {
-        grid-template-areas:
-                "nav"
-                "content"
-                "article"
-                "footer";
+    @media (max-width: 768px) {
+        .container {
+            grid-template-areas:
+                    "header"
+                    "nav"
+                    "content"
+                    "article"
+                    "footer";
 
-        grid-template-columns: 1fr;
-        grid-template-rows:
-                auto /* Nav */
-                1fr /* Header */
-                auto /* Content */
-                1fr; /* Footer */
-    }
-    aside{
-        display: none;
-    }
-    nav, article, content, footer{
-        margin: 0 auto;
-        padding: 0;
-    }
-    nav{
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-        background-color: cadetblue;
+            grid-template-columns: 100%;
+            grid-template-rows:
+                    1fr /* Header */
+                    auto /* Nav */
+                    1fr /* Header */
+                    auto /* Content */
+                    1fr; /* Footer */
+        }
+        aside{
+            display: none;
+        }
+        header{
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+        header #logo1 img,
+        header #logo2 img,
+        header #logo3 img{
+            width: 20%;
+        }
+        header p{
+            align-self: center;
+        }
 
-    }
-    nav ul{
-        padding: 0;
+        nav, article, content, footer{
+            margin: 0 auto;
+            padding: 0;
+        }
+        nav{
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
 
-    }
-    main {
-        padding: 10px;
-    }
-    main p{
-        font-size: 10px;
-    }
-    main h1{
-        font-size: 40px;
-        line-height: 28px;
-    }
-    main h2{
-        font-size: 20px;
-        line-height: 18px;
+        }
+        nav ul{
+            padding: 0;
 
-    }
-    article{
-        padding: 10px;
-    }
-    article p{
-        font-size: 12px;
-    }
-}
+        }
+        nav ul li{
+           font-size: 14px;
 
-@media all and (max-width: 641px) {
-    .date {
-        width: 100%;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 10px;
+        }
+        main {
+            padding: 10px;
+        }
+        main p{
+            font-size: 10px;
+        }
+        main h1{
+            font-size: 40px;
+            line-height: 38px;
+        }
+        main h2{
+            font-size: 25px;
+            line-height: 18px;
+
+        }
+        main h3{
+            font-size: 12px;
+            line-height: 12px;
+
+        }
+        article{
+            padding: 10px;
+        }
+        article p{
+            font-size: 12px;
+        }
+        footer{
+            margin: 0;
+        }
+        footer p {
+            font-size: 9px;
+
+        }
     }
 
-    .events {
-        border: none;
-        width: 100%;
-        margin-top: 0;
-    }
+    @media all and (max-width: 641px) {
+        .date {
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
 
-    .events-detail {
-        padding: 0;
-    }
+        .events {
+            border: none;
+            width: 100%;
+            margin-top: 0;
+        }
 
-    li.date p {
-        margin: 0;
+        .events-detail {
+            padding: 0;
+        }
+
+        li.date p {
+            margin: 0;
+        }
     }
-}
