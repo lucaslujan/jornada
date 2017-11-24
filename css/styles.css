@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, p {
     grid-template-areas:
             "header header header"
             "nav content side"
-            "article article article"
+            "nav article article"
             "footer footer footer";
     grid-template-columns: 25% 65% 10%;
     grid-template-rows: auto 1fr auto;
@@ -50,6 +50,7 @@ nav {
     grid-area: nav;
     display: flex;
     font-family: 'Merriweather', serif;
+    box-shadow: #CCCCCC;
 }
 nav ul{
     padding: 50px;
@@ -71,7 +72,7 @@ nav ul li{
 }
 article{
     grid-area: article;
-    padding: 0 200px;
+    padding: 0 90px 0 0;
     height: auto;
 }
 article p{
@@ -82,8 +83,8 @@ article p:hover{
     color: white;
 }
 .person {
-    width: 700px;
-    padding: 70px 0 0 230px;
+    width: 800px;
+    padding: 70px 0 0 50px;
     min-height: 200px;
     margin: 20px auto;
     position: relative;
@@ -96,7 +97,7 @@ article p:hover{
     transform: rotate(0deg); /* To force its own layer */
     position: absolute;
     top: -10%;
-    left: 0;
+    left: -20%;
 }
 .person-badge:before,
 .person-badge:after{
@@ -112,14 +113,14 @@ article p:hover{
     transition:500ms;
 }
 .person-badge:after {
-    background: linear-gradient(to top, #F88 0%,#EEE 100%);
+    background: linear-gradient(to top, #ef7521 0%,#EEE 100%);
     opacity: 0;
 }
 .person:nth-child(2) .person-badge:after {
-    background: linear-gradient(to top, #5AB 0%,#EEE 100%);
+    background: linear-gradient(to top, #ef7521 0%,#EEE 100%);
 }
 .person:nth-child(3) .person-badge:after {
-    background: linear-gradient(to top, #FC0 0%,#EEE 100%);
+    background: linear-gradient(to top, #ef7521 0%,#EEE 100%);
 }
 .person-badge:hover:after {
     opacity: 1;
@@ -135,21 +136,117 @@ article p:hover{
 }
 .person-badge img.peculiar {
     opacity: 0;
-    transform: translateY(80px)
+    transform: translateY(0px)
 }
 
 .person-badge:hover img.normal {opacity: 0;transform: translateY(0)}
 .person-badge:hover img.peculiar {opacity: 1;transform: translateY(0)}
 
 .person h3 {
-    margin: 0;
+    font-family: 'Merriweather', serif;
+    margin-top: -20px;
+    padding-bottom: 5px;
     font-weight: 200;
     font-size: 28px;
 }
 
-strong {color: #888;margin:-5px 0 5px 0;display:block;font-size:.8em;}
+strong {color: #ef7521;margin:-5px 0 5px 0;display:block;font-size:.7em;
+    font-family: 'Merriweather', serif;}
+
+.organizadores{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    font-family: 'Merriweather', serif;
+    line-height: 25px;
+
+}
+.organizadores p{
+    font-size: 19px;
+}
+.organizadores ul li{
+    font-size: 16px;
+}
+
+.organizadores ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+main.tabs {
+    min-width: 320px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    display: none;
+    border-top: 1px solid #ddd;
+}
+
+input {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+
+label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+label[for*='1']:before { content: '\f041'; }
+label[for*='2']:before { content: '\f095'; }
+label[for*='3']:before { content: '\f0d6'; }
+label[for*='4']:before { content: '\f007'; }
+label[for*='5']:before { content: '\f0a7'; }
 
 
+label:hover {
+    color: #888;
+    cursor: pointer;
+}
+
+input:checked + label {
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid orange;
+    border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5{
+    display: block;
+}
+
+@media screen and (max-width: 650px) {
+    label {
+        font-size: 0;
+    }
+    label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    label {
+        padding: 15px;
+    }
+}
 
 
 main {
@@ -209,7 +306,7 @@ aside img{
 ul.main {
     list-style: none;
     width: 100%;
-    margin: 20px 100px;
+    margin: 20px 20px;
     font-family: 'Merriweather', serif;
 }
 
