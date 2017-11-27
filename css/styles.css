@@ -21,21 +21,25 @@
     }
     header {
         grid-area: header;
-        padding: 20px;
         height: 140px;
         display: flex;
-        flex-direction: row;
+        width: 100%;
         justify-content: center;
+        flex-direction: row;
         background-color: #ececec;}
 
-    header #logo1 img{
-        width: 230px;
-        height: auto;
+    header .logo1{
+    }
+
+    header .logo1 img{
+        margin-top: 20px;
+        width: 220px;
     }
 
     header p{
         font-size: 11px;
         align-self: flex-end;
+        padding-left: 20px;
     }
 
     /* Menu */
@@ -47,9 +51,6 @@
     }
     nav ul{
         padding: 50px;
-    }
-    nav ul li a{
-        text-decoration: none;
     }
     nav ul li a{
         text-decoration: none;
@@ -74,88 +75,116 @@
     }
     article p{
         font-size: 16px;
+        line-height: 19px;
     }
-    article p:hover{
-        background-color: #414244;
-        color: white;
+    article h1{
+        font-size: 32px;
     }
-
+    article h2{
+        font-size: 22px;
+        color: #EF7521;
+    }
+    article p a {
+        text-decoration: none;
+        color: black;
+    }
 
 
     /* Expositores */
-
-    .person {
-        width: 700px;
-        padding: 70px 0 0 50px;
-        min-height: 200px;
-        margin: 20px auto;
-        position: relative;
+    .expositores{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        margin-bottom: 10px;
     }
-    .person-badge {
-        width: 200px;
-        height: 280px;
-        border-radius: 0 0 100px 100px;
-        overflow: hidden;
-        transform: rotate(0deg); /* To force its own layer */
-        position: absolute;
-        top: -10%;
-        left: -20%;
+    .expositores .expo-foto{
+        width:25%;
     }
-    .person-badge:before,
-    .person-badge:after{
-        content: "";
-        position: absolute;
-        bottom: 20%;
-        border-radius: 50%;
-        z-index:-1;
-        width: 200px;
-        height: 200px;
-        background: #DDD;
-        background: linear-gradient(to bottom, #EEE 0%,#CCC 100%);
-        transition:500ms;
-    }
-    .person-badge:after {
-        background: linear-gradient(to top, #ef7521 0%,#EEE 100%);
-        opacity: 0;
-    }
-    .person:nth-child(2) .person-badge:after {
-        background: linear-gradient(to top, #ef7521 0%,#EEE 100%);
-    }
-    .person:nth-child(3) .person-badge:after {
-        background: linear-gradient(to top, #ef7521 0%,#EEE 100%);
-    }
-    .person-badge:hover:after {
-        opacity: 1;
-    }
-
-    .person-badge img {
+    .expositores .expo-foto img{
         width: 200px;
         border-radius: 100%;
+        background-color: #679fd8;
+
+    }
+    .expositores .desc{
+        width: 65%;
+        align-self: center;
+    }
+    .expositores .desc h3{
+        font-size: 25px;
+    }
+
+    .expositores .desc p.cargo{
+        color: #679fd8;
+    }
+    .expositores .desc p a{
+       font-size: 20px;
+    }
+
+
+
+
+    /* Organizadores */
+    .organizadores{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .organizadores h3{
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    .organizadores .orga-foto{
+        align-self: center;
+    }
+    .organizadores .orga-foto img{
+        width: 250px;
+
+    }
+    #logo{
+        width: 130px;
+    }
+    .organizadores .desc{
+        align-self: center;
+    }
+    .organizadoress .desc h3{
+        font-size: 25px;
+    }
+    .organizadores .desc p{
+        font-size: 15px;
+        text-align: center;
+        color: gray;
+    }
+
+
+    /* Mapa */
+    .embed-container {
+        position: relative;
+        padding-bottom: 80.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+
+    }
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
         position: absolute;
-        bottom: 20%;
+        filter: orange;
+        top: 0;
         left: 0;
-        transition: 500ms;
+        width: 100%;
+        height: 100%;
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: grayscale(100%);
     }
-    .person-badge img.peculiar {
-        opacity: 0;
-        transform: translateY(0px)
-    }
-
-    .person-badge:hover img.normal {opacity: 0;transform: translateY(0)}
-    .person-badge:hover img.peculiar {opacity: 1;transform: translateY(0)}
-
-    .person h3 {
-        font-family: 'Merriweather', serif;
-        margin-top: -20px;
-        padding-bottom: 5px;
-        font-weight: 200;
-        font-size: 28px;
-    }
-
-    strong {color: #ef7521;margin:-5px 0 5px 0;display:block;font-size:.7em;
-        font-family: 'Merriweather', serif;}
-
-
 
     /* Main */
 
@@ -178,26 +207,32 @@
         line-height: 12px;
     }
 
+    .main-small{
+        font-family: 'Merriweather', serif;
+        color: darkgray;
+    }
+    .main-small h1{
+        font-size: 35px;
+        line-height: 46px;
+    }
+
+    .main-small h2{
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .main-small h3{
+        font-size: 15px;
+        line-height: 12px;
+    }
+    .main-small p{
+        font-size: 10px;
+    }
 
     /* Aside */
 
     aside {
         grid-area: side;
-        margin-right: 50px;
-
     }
-    aside p{
-        font-family: 'Merriweather', serif;
-        text-align: center;
-    }
-    aside img{
-        margin: 0 auto;
-        width: 200px;
-        padding: 10px;
-        height: auto;
-    }
-
-
 
     /* Programa */
 
@@ -291,17 +326,64 @@
 
     /* Footer */
 
-
     footer {
         grid-area: footer;
-        background-color: darkgray;
-        padding: 15px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        background-color:#E1E4E4;
     }
-    footer p{
+    footer .logo{
+        flex-basis: 20%;
+    }
+    footer .logo img{
+        width: 250px;
+        height: auto;
+        padding: 40px 0 0 0;
+
+    }
+    footer .col1{
+        padding: 60px 0 0 50px;
+        flex-basis: 20%;
+        font-family: 'Merriweather', serif;
         font-size: 12px;
-        line-height: 18px;
-        text-align: center;
-        color: white;
+        line-height: 22px;
+    }
+    footer .col1 a{
+        text-decoration: none;
+        color: black;
+    }
+    footer .col2{
+        flex-basis: 20%;
+        padding: 60px 0 0 50px;
+        font-family: 'Merriweather', serif;
+        font-size: 12px;
+        line-height: 22px;
+    }
+    footer .col2 a{
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+    }
+    footer .col3{
+        flex-basis: 15%;
+        text-align: left;
+        padding: 120px 0 0 0;
+        font-family: 'Merriweather', serif;
+        font-size: 12px;
+        line-height: 22px;
+    }
+    footer .col3 a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .redes-footer a{
+        font-size: 22px;
+        color: black;
+        margin-left: 5px;
+
     }
     @media (max-width: 768px) {
         .container {
@@ -384,12 +466,27 @@
         article p{
             font-size: 12px;
         }
-        footer{
-            margin: 0;
+        .expositores, .expositores .expo-foto{
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
         }
-        footer p {
-            font-size: 9px;
-
+        ul.main{
+            margin: 0 auto;
+        }
+        footer{
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+        }
+        footer .col1, footer .col2,
+        footer .logo{
+            align-self: center;
+            padding: 0;
+            text-align: center;
+            padding-bottom: 25px;
         }
     }
 
