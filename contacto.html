@@ -8,12 +8,14 @@
     <title>Jornada de intercambios - 13 de diciembre de 2017</title>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="form.css" >
+    <script src="form.js"></script>
 </head>
 <body>
 <div class="container">
-    <header>
+    <header class="effect1">
         <div class="logo1"><img src="img/logo_consultoria.png" alt=""></div>
-        <p><b>GRUPO CF (Coworking SLA, Estudio Jurídico Caro Figueroa y Consultora de RRLL).</b></p>
     </header>
     <nav>
         <ul>
@@ -38,14 +40,32 @@
     </aside>
     <article>
         <hr>
-        <h1>Contacto</h1>
-        <p>Teléfonos: 4212619 – 155 20 30 50.<br>
-        <p><b><a href="mailto:info@estudiocarofigueroa.com" target="_top">info@estudiocarofigueroa.com</a></b></p>
-        </p>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div id="form-main">
+            <div id="form-div">
+                <form class="montform" id="reused_form" >
+                    <p class="name">
+                        <input name="name" type="text" class="feedback-input" required placeholder="Nombre" id="name" />
+                    </p>
+                    <p class="email">
+                        <input name="email" type="email" required class="feedback-input" id="email" placeholder="Email" />
+                    </p>
+                    <p class="text">
+                        <textarea name="message" class="feedback-input" id="comment" placeholder="Mensaje"></textarea>
+                    </p>
+                    <div class="submit">
+                        <button type="submit" class="button-blue">Enviar</button>
+                    </div>
+                </form>
+                <div id="error_message" style="width:100%; height:100%; display:none;">
+                    <h4>
+                        Error
+                    </h4>
+                    Disculpe ha ocurrido un error al enviar su consulta.
+                </div>
+                <div id="success_message" style="width:100%; height:100%; display:none; "> <h2>Gracias! Su mensaje ha sido enviado
+                    satisfactoriamente.</h2> </div>
+            </div>
+        </div>
     </article>
     <footer>
         <div class="logo"><img src="img/logobyn.svg" alt=""></div>
@@ -66,6 +86,46 @@
         </div>
     </footer>
 </div>
-<script src="https://use.fontawesome.com/ebc2a44ead.js"></script
+<script src="https://use.fontawesome.com/ebc2a44ead.js"></script>
+<script>
+    const contactInputs = document.querySelectorAll('.contact-input');
+
+    function labelActive() {
+        this.previousElementSibling.classList.add('contact-label-active');
+        this.removeAttribute('placeholder');
+    }
+
+    function labelInactive() {
+        if (this.value.length === 0) {
+            this.previousElementSibling.classList.remove('contact-label-active');
+        }
+        this.setAttribute('placeholder', this.previousElementSibling.innerHTML);
+    }
+
+    contactInputs.forEach(input => {
+        input.addEventListener('focus', labelActive);
+    input.addEventListener('blur', labelInactive);
+    });
+
+
+    // page slide out animation and confirmation
+    const page = document.querySelector('#contact-form');
+    const contactForm = page.querySelector('form');
+    const sendBtn = page.querySelector('#send-btn');
+    const envelope = document.querySelector('.env-body');
+    const note = document.querySelector('.note');
+
+    function sendMailer(e) {
+        e.preventDefault();
+        page.classList.add('form-sent');
+        envelope.classList.add('confirm-active');
+        note.innerHTML = "Su mensaje fue<br><span class='bigger'>Enviado!</span>";
+    }
+
+    contactForm.addEventListener('submit', '');
+
+
+</script>
+
 </body>
 </html>
