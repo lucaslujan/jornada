@@ -75,6 +75,7 @@
     }
 
 
+
     /* Article */
 
     article{
@@ -131,8 +132,6 @@
     }
 
 
-
-
     /* Organizadores */
     .organizadores{
         display: flex;
@@ -167,6 +166,33 @@
         font-size: 15px;
         text-align: center;
         color: gray;
+    }
+
+    button{
+        display: block;}
+    button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        background: transparent;
+        box-shadow: 2px 5px 5px #888888;
+    }
+    button:hover {
+        outline: 2px solid #8CDADE;}
+    .post {
+        background: #ffffff;
+        transition: all 0.5s;}
+    .less {
+        height: 80px; width: 100%;
+        overflow: hidden;}
+    .more {
+        height: auto; width: 100%;
+        overflow: auto;}
+    @media screen and (max-width: 500px) {
+        .container {
+            text-align: center;
+            width: 80%;
+        }
     }
 
 
@@ -525,7 +551,7 @@
         footer .logo{
             align-self: center;
             padding: 0;
-            text-align: center;6
+            text-align: center;
             padding-bottom: 25px;
         }
     }
