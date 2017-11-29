@@ -121,6 +121,16 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur doloribus eius eligendi est iste magni natus nostrum officia omnis quam, quisquam quo repellendus sequi tenetur totam veritatis voluptatum! Minus.</p>
             </div>
         </div>
+        <div class="wrapper well">
+
+            <div class="desc-wrapper">
+                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+            </div>
+
+            <button class="more-info btn btn-primary"><span class="more">More <span class="glyphicon glyphicon-chevron-down"></span></span><span class="less">Less  <span class="glyphicon glyphicon-chevron-up"></span></span></button>
+
+            </container>
     </article>
     <footer>
         <div class="logo"><img src="img/logobyn.svg" alt=""></div>
@@ -142,6 +152,37 @@
     </footer>
 </div>
 <script src="https://use.fontawesome.com/ebc2a44ead.js"></script>
+<script>
+    $(document).ready(function() {
 
+        var descMinHeight = 120;
+        var desc = $('.desc');
+        var descWrapper = $('.desc-wrapper');
+
+        // show more button if desc too long
+        if (desc.height() > descWrapper.height()) {
+            $('.more-info').show();
+        }
+
+        // When clicking more/less button
+        $('.more-info').click(function() {
+
+            var fullHeight = $('.desc').height();
+
+            if ($(this).hasClass('expand')) {
+                // contract
+                $('.desc-wrapper').animate({'height': descMinHeight}, 'slow');
+            }
+            else {
+                // expand
+                $('.desc-wrapper').css({'height': descMinHeight, 'max-height': 'none'}).animate({'height': fullHeight}, 'slow');
+            }
+
+            $(this).toggleClass('expand');
+            return false;
+        });
+
+    });
+</script>
 </body>
 </html>

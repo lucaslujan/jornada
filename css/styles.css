@@ -196,7 +196,39 @@
     }
 
     /* Main */
+    .wrapper {
+        width: 600px;
+        margin: 20px auto;
+    }
 
+    .desc-wrapper {
+        margin: 0 auto;
+        margin-bottom: 15px;
+        max-height: 120px;
+        overflow: hidden;
+    }
+
+    .more-info {
+        /* Hide more info to begin with and reveal if text inside desc is too long*/
+        display: none;
+    }
+
+    /* Only display 'more' to begin with */
+    .more-info .less,
+    .more-info.expand .more {
+        display: none;
+    }
+    .more-info.expand .less {
+        display: inline;
+    }
+
+    /* Misc, just to make things look a bit prettier */
+    .more-info:focus {
+        outline: none;
+    }
+    span.glyphicon {
+        margin-left: 3px;
+    }
 
     main {
         grid-area: content;
@@ -209,7 +241,7 @@
 
     main h2{
         font-size: 38px;
-        line-height: 28px;
+        line-height: 39px;
     }
     main h3{
         font-size: 20px;
