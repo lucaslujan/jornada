@@ -128,9 +128,43 @@
         color: #679fd8;
     }
     .expositores .desc p a{
-       font-size: 20px;
+       font-size: 12px;
     }
-
+    .hide{
+        font-size: 16px;
+    }
+    .Toggle {
+        margin-bottom: 0.5em;
+        font-family: 'Merriweather', serif;
+    }
+    .Toggle-link {
+        padding: 0.5em;
+        display: block;
+        color: #df6d27;
+        text-decoration: none;
+    }
+    .Toggle-content {
+        padding: 0.5em;
+    }
+    /*Open and closed classes*/
+    .isOpen:after {
+        content: " - ";
+        display: inline-block;
+        margin-left: 0.35em;
+        width: 1em;
+        height: 1em;
+    }
+    .isClosed:after {
+        content: " + ";
+        display: inline-block;
+        margin-left: 0.35em;
+        width: 1em;
+        height: 1em;
+    }
+    /*JS class*/
+    .js-toggle {
+        display: none;
+    }
 
     /* Organizadores */
     .organizadores{
@@ -159,7 +193,7 @@
     .organizadores .desc{
         align-self: center;
     }
-    .organizadoress .desc h3{
+    .organizadores .desc h3{
         font-size: 25px;
     }
     .organizadores .desc p{
@@ -179,22 +213,6 @@
     }
     button:hover {
         outline: 2px solid #8CDADE;}
-    .post {
-        background: #ffffff;
-        transition: all 0.5s;}
-    .less {
-        height: 80px; width: 100%;
-        overflow: hidden;}
-    .more {
-        height: auto; width: 100%;
-        overflow: auto;}
-    @media screen and (max-width: 500px) {
-        .container {
-            text-align: center;
-            width: 80%;
-        }
-    }
-
 
     /* Mapa */
     .embed-container {
@@ -222,39 +240,6 @@
     }
 
     /* Main */
-    .wrapper {
-        width: 600px;
-        margin: 20px auto;
-    }
-
-    .desc-wrapper {
-        margin: 0 auto;
-        margin-bottom: 15px;
-        max-height: 120px;
-        overflow: hidden;
-    }
-
-    .more-info {
-        /* Hide more info to begin with and reveal if text inside desc is too long*/
-        display: none;
-    }
-
-    /* Only display 'more' to begin with */
-    .more-info .less,
-    .more-info.expand .more {
-        display: none;
-    }
-    .more-info.expand .less {
-        display: inline;
-    }
-
-    /* Misc, just to make things look a bit prettier */
-    .more-info:focus {
-        outline: none;
-    }
-    span.glyphicon {
-        margin-left: 3px;
-    }
 
     main {
         grid-area: content;
@@ -303,7 +288,8 @@
 
 
     #calendar {
-        width: 100%;
+        width: 70%;
+        padding: 10px;
     }
 
     #calendar a {
@@ -345,7 +331,7 @@
     }
 
     #calendar .days li {
-        height: 180px;
+        height: 80px;
     }
 
     #calendar .days li:hover {
@@ -567,6 +553,7 @@
     }
     @media (max-width: 768px) {
         .container {
+            width: 100%;
             grid-template-areas:
                     "header"
                     "nav"
@@ -602,7 +589,7 @@
             align-self: center;
         }
 
-        nav, article, content, footer{
+        nav, article, content, footer {
             margin: 0 auto;
             padding: 0;
         }
@@ -610,7 +597,6 @@
             width: 100%;
             flex-direction: column;
             text-align: center;
-
         }
         nav ul{
             padding: 0;
@@ -646,10 +632,24 @@
         article p{
             font-size: 12px;
         }
-        .expositores, .expositores .expo-foto{
+        .expositores{
             width: 100%;
             flex-direction: column;
             text-align: center;
+        }
+        .expositores .expo-foto{
+            width: 100%;
+            align-self: center;
+
+        }
+
+        .organizadores{
+            width: 100%;
+            text-align: center;
+            padding: 0;
+        }
+        .organizadores .orga-foto img{
+            width: 250px;
         }
         ul.main{
             margin: 0 auto;
@@ -659,7 +659,6 @@
             height: auto;
             flex-direction: column;
             margin: 0;
-            padding: 20px;
         }
         footer .col1, footer .col2,
         footer .logo{
