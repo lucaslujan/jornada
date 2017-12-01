@@ -288,7 +288,7 @@
 
 
     #calendar {
-        width: 70%;
+        width: 90%;
         padding: 10px;
     }
 
@@ -301,7 +301,7 @@
         list-style: none;
         padding: 0;
         margin: 0;
-        width: 100%;
+        width: 80%;
     }
 
     #calendar li {
@@ -331,7 +331,7 @@
     }
 
     #calendar .days li {
-        height: 80px;
+        height: 130px;
     }
 
     #calendar .days li:hover {
@@ -352,13 +352,10 @@
     #calendar .event {
         clear: both;
         display: block;
-        font-size: 13px;
+        font-size: 10px;
         border-radius: 4px;
         padding: 5px;
-        margin-top: 40px;
-        margin-bottom: 5px;
-        line-height: 14px;
-        background: #e4f2f2;
+        background: #ececec;
         border: 1px solid #b5dbdc;
         color: #009aaf;
         text-decoration: none;
@@ -366,7 +363,6 @@
 
     #calendar .event-desc {
         color: #666;
-        margin: 3px 0 7px 0;
         text-decoration: none;
     }
 
@@ -376,7 +372,7 @@
     }
 
     /* ============================
-                    Mobile Responsiveness
+        Mobile Responsiveness
        ============================*/
     @media (max-width: 768px) {
         #calendar .weekdays, #calendar .other-month {
