@@ -128,7 +128,8 @@
         color: #679fd8;
     }
     .expositores .desc p a{
-       font-size: 12px;
+       font-size: 19px;
+        padding-left: 10px;
     }
     .hide{
         font-size: 16px;
@@ -371,29 +372,6 @@
         color: #666;
     }
 
-    /* ============================
-        Mobile Responsiveness
-       ============================*/
-    @media (max-width: 768px) {
-        #calendar .weekdays, #calendar .other-month {
-            display: none;
-        }
-
-        #calendar li {
-            height: auto !important;
-            border: 1px solid #ededed;
-            width: 100%;
-            padding: 10px;
-            margin-bottom: -1px;
-        }
-
-        #calendar .date {
-            float: none;
-        }
-    }
-
-
-
 
 
     /* Programa */
@@ -628,10 +606,30 @@
         article p{
             font-size: 12px;
         }
-        .expositores{
+        article #calendar{
             width: 100%;
-            flex-direction: column;
-            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+        }
+        article #calendar .weekdays{
+            width: 100%;
+            font-size: 8px;
+        }
+        article #calendar li {
+            height: 50px;
+            border: 1px solid #ededed;
+            margin-bottom: -1px;
+        }
+        article #calendar .days{
+            width: 100%;
+        }
+        article #calendar .date {
+            float: none;
+        }
+        .expositores{
+           width: 100%;
+           flex-direction: column;
+           text-align: center;
         }
         .expositores .expo-foto{
             width: 100%;
